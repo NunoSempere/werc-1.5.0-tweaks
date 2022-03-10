@@ -34,7 +34,11 @@ for(a in $werc_apps)
 
 fn werc_exec_request {
     site=$SERVER_NAME
-    base_url=http://$site:$SERVER_PORT
+    base_url=http://$site
+    # base_url=http://$site:$SERVER_PORT
+    #  ^ causes malformed rss to be generated
+    #  could be useful for debugging, but  
+    #  otherwise not worth it
     sitedir=$sitesdir/$site
     headers=`{get_lib_file headers.tpl}
     master_template=`{get_lib_file default_master.tpl}
