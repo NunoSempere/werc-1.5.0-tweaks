@@ -26,6 +26,7 @@ path=($plan9port/bin . ./bin ./bin/contrib /bin /usr/bin)
 # formatter, but all major functionality should should be formatter agnostic.
 #formatter=(fltr_cache markdown.pl)
 formatter=(fltr_cache md2html.awk)	# no perl for old men
+# formatter=(fltr_cache discount.rc) # use C for ze modern comforts. Requires https://www.pell.portland.or.us/~orc/Code/discount/
 
 # Enable debugging, to disable set to ()
 debug=true
