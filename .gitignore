@@ -1,0 +1,16 @@
+## Sites
+/sites/**
+
+## Except the default ones
+!/sites/default.cat-v.org
+!/sites/default.cat-v.org/**
+
+!/sites/tst.cat-v.org
+!/sites/tst.cat-v.org/**
+
+!/sites/werc.cat-v.org/**
+!/sites/werc.cat-v.org/**
+
+!/sites/CREATE-SITE-DIRECTORIES-HERE
+
+
