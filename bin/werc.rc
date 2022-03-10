@@ -1,4 +1,4 @@
-#!/bin/rc
+#!/usr/lib/plan9/bin/rc
 . ./cgilib.rc
 . ./werclib.rc
 . ./wercconf.rc
@@ -34,10 +34,10 @@ for(a in $werc_apps)
 
 fn werc_exec_request {
     site=$SERVER_NAME
-    base_url=http://$site
-    # base_url=http://$site:$SERVER_PORT
+    base_url=https://$site
+    # base_url=https://$site:$SERVER_PORT
     #  ^ causes malformed rss to be generated
-    #  could be useful for debugging, but  
+    #  could be useful for debugging, but
     #  otherwise not worth it
     sitedir=$sitesdir/$site
     headers=`{get_lib_file headers.tpl}
