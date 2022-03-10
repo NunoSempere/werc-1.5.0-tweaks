@@ -7,7 +7,7 @@ fn statpost {
     title=`{read $f/index.md}
     post_uri=$base_url^`{cleanname `{echo $f | sed -e 's!^'$sitedir'!!'}}^'/'
     by=`{ls -m $f | sed 's/^\[//g; s/].*$//g' >[2]/dev/null}
-    ifs=() {summary=`{ cat $f/index.md |strip_title_from_md_file| ifs=$difs {$formatter | escape_html} }}
+    ifs=() {summary=`{ cat $f/index.md |strip_title_from_md_file | head -n 9 | ifs=$difs {$formatter | escape_html} }}
 }
 
 %}
