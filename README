@@ -7,7 +7,6 @@ users easy customization.
 
 For more information see the official website: http://werc.cat-v.org/
 
-
 Installation
 ------------
 
@@ -38,6 +37,9 @@ If you will want to allow updates via the web interface (eg., for wiki or
 comments apps) make sure all files under sites/ are writable by the user your
 cgi will run as, usually www-data, for example by doing: chown -R :www-data
 sites/; chmod -R g+w sites/
+
+Werc currently assumes that your website runs http, rather than https. If you are running https, locate and change https mentions using
+grep http -R bin/
 
 If your Plan 9 binaries are located somewhere else than the standard /bin/ you
 will need to edit the first line of bin/werc.rc (Note that p9p in particular is
