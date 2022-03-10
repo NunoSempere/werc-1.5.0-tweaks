@@ -31,7 +31,7 @@ header a {
 }
 
 header h1 span {
-	margin-left: 1em;
+	margin-left: 0em;
 	font-size: 50%;
 	font-style: italic;
 }
