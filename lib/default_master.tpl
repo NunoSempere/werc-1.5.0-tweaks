@@ -1,6 +1,6 @@
 <header>
     <nav>
-% cat `{ get_lib_file top_bar.inc }
+% cat `{pwd}^/sites^/`{echo $site }^/_werc/lib/top_bar.inc
     </nav>
     <h1><a href="/">%($"siteTitle%) <span id="headerSubTitle">%($"siteSubTitle%)</span></a></h1>
 </header>
