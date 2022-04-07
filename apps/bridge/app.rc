@@ -6,7 +6,7 @@ fn conf_enable_comments {
         shift
     }
     if not if(~ $1 -a) {
-        bridge_anon_comments=yes
+        bridge_anon_comments=yes 
     }
     enable_comments=yes
     groups_allowed_comments=$*
@@ -64,18 +64,15 @@ fn mk_new_comment {
             if(validate_new_user $"post_arg_comment_user $post_arg_comment_passwd $post_arg_comment_passwd2) {
                 u=$post_arg_comment_user':'$post_arg_comment_passwd
                 dir=$comments_dir^'_pending'
-                # XXX: This doesn't work because we then do a redirect.
-                # NN: Now it works, but the notify_notes has to be not-empty.
-								#     Kind of a hack, because I'm not really that familiar with rc.
-								notify_notes='Saved commend.'
-								_status='Saved comment and registration info, they will be enabled when approved by an admin.'
+                # XXX: This doesn't work because we then do a redirect. 
+                notify_notes='Saved comment and registration info, they will be enabled when approved by an admin.'
             }
             if not
                 _status=$status
         }
         if not if(! ~ $#bridge_anon_comments 0) {
             if(~ $"post_arg_ima_robot 'not')
-                u='Anonymous' # Anonymous
+                u='Glenda' # Anonymous
             if not
                 _status='You are a robot!'
         }
@@ -87,8 +84,7 @@ fn mk_new_comment {
     if not
         _status='You are not a member of a group allowed to comment.'
 
-    # if(~ $#_status 0) {
-    if (~ $#notify_notes 1){
+    if(~ $#_status 0) {
         umask 002
 
         dir=$dir'/'`{date -n} # FIXME Obvious race
@@ -98,11 +94,10 @@ fn mk_new_comment {
             echo $post_arg_comment_text > $dir/body
         _s=$status
         if(! ~ $"_s '') {
-           dprint 'ERROR XXX: Could not create comment: ' $_s
+           dprint 'ERROR XXX: Could not create comment: ' $_s 
             _status='Could not post comment due internal error, sorry.'
         }
     }
     notify_errors=$_status
     status=$_status
 }
-
