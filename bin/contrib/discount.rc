@@ -1,4 +1,4 @@
 #!/bin/rc
 # requires discount markdown: https://www.pell.portland.or.us/~orc/Code/discount/
-/usr/bin/markdown -f fencedcode -f ext $1
+/usr/bin/markdown -f fencedcode -f ext  $1
 

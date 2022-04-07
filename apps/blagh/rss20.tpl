@@ -32,7 +32,10 @@ fn statpost {
 %}
         <item>
             <title><![CDATA[%($title%)]]></title>
-            <author><![CDATA[%($by%)@noreply.cat-v.org (%($by%))]]></author>
+        %{
+	   # <author><![CDATA[%($by%)@noreply.cat-v.org (%($by%))]]></author>
+	   echo '<author><![CDATA[nuno.sempere@protonmail.com (Nuño Sempere)]]></author>'
+	%}
             <link>%($post_uri%)</link>
             <guid isPermaLink="true">%($post_uri%)</guid>
             <pubDate>%($pubdate%)</pubDate>

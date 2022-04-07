@@ -6,7 +6,7 @@ start() {
 }
 
 stop() {
-	kill -15 "$(cat "$PID_FILE")"
+	kill -15 "$(cat "$PID_file")"
 }
 
 case $1 in
