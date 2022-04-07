@@ -22,6 +22,7 @@ body {
 	flex-wrap: wrap;
 	/* font-family: sans; */
 	font-family: 'Source Serif Pro', serif;
+	font-size: 1.5em;
 }
 
 header {
@@ -52,7 +53,7 @@ header a {
 
 header h1 span {
 	margin-left: 0em;
-	font-size: 50%;
+	font-size: 70%;
 	font-style: italic;
 }
 
@@ -88,7 +89,7 @@ figure figcaption {
 
 figcaption {
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 img {
