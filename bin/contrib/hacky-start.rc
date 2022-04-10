@@ -1,0 +1,4 @@
+## Either figure out init, or run this every time from a sudo user.
+sudo rc-service nginx start
+/usr/bin/spawn-fcgi -a 127.0.0.1 -p 9000 -f /usr/bin/fcgiwrap
+

@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+## move to /etc/init.d/spawn-fcgi2
+## Then sudo rc-update add spawn-fcgi2
+## test with sudo rc-service spawn-fcgi2 start
+## and sudo rc-service spawn-fcgi2 stop
+PID_file="/var/tmp/spawn"
+
+depend() {
+  need net
+}
+
+start() {
+  /usr/bin/spawn-fcgi -a 127.0.0.1 -p 9000 -f /usr/bin/fcgiwrap -P "$PID_file"
+}
+
+stop() {
+  kill -15 "$(cat "$PID_file")"
+  rm "$PID_file"
+}
+
+case $1 in
+  start|stop) "$1" ;;
+esac
+
