@@ -9,6 +9,8 @@
 % if(test -f $sitedir/_werc/pub/style.css)
 %    echo '    <link rel="stylesheet" href="/_werc/pub/style.css" type="text/css" media="screen" title="default">'
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
     <meta charset="UTF-8">
 % # Legacy charset declaration for backards compatibility with non-html5 browsers.
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
@@ -23,7 +25,7 @@
 %   cat $h
 
     %($"extraHeaders%)
-
+   <script src="https://cdn.jsdelivr.net/npm/link-summoner@1.0.2/dist/browser.min.js" type="module"></script>
 </head>
 <body>
 
