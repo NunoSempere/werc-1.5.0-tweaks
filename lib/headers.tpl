@@ -25,7 +25,6 @@
 %   cat $h
 
     %($"extraHeaders%)
-   <script src="https://cdn.jsdelivr.net/npm/link-summoner@1.0.2/dist/browser.min.js" type="module"></script>
 </head>
 <body>
 
