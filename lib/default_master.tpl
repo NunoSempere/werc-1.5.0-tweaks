@@ -5,7 +5,7 @@
 % cat `{pwd}^/sites^/`{echo $site }^/_werc/lib/top_bar.inc
     </nav>
 % }
-    <h1><a href="/">%($"siteTitle%) <span id="headerSubTitle">%($"siteSubTitle%)</span></a></h1>
+    <h1><a href="/">%($"siteTitle%) </a><span id="headerSubTitle">%($"siteSubTitle%)</span></h1>
 </header>
 
 % if(! ~ $#handlers_bar_left 0) {
