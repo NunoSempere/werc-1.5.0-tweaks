@@ -86,8 +86,8 @@ fn blagh_body {
         sed '1s!.*![&]('^$l(2)^') ('^$l(1)^')!' < $p/index.md 
 				# cat $p/index.md | sed '1s!.*![&]('^$l(2)^') ('^$l(1)^')!' | sed -n '/^.\{15\}/p' | echo
         echo # Needed extra \n so markdown doesn't mess up the formatting, probably can be done in sed.
-				echo #
-    } | head -n 9 | $formatter | sed 's/h[2-9]/i/g'| sed 's/h1/h3/g' 
+	echo #
+    } | head -n 9 | $formatter | sed 's/h[2-9]/i/g'| sed 's/h1/h3/g'
     # HTML posts
     for(p in `{get_post_list $blagh_root^$blagh_dirs}) {
         cat < $p/index.html
