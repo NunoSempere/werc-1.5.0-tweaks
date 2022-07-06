@@ -76,7 +76,7 @@ fn blagh_body {
 
     # Direct links to feeds are disabled because they are not very useful, add clutter and might waste pagerank.
     # An user can add this on their own using handlers_body_head anyway.
-    echo '<div style="text-align:left"><a href="index.rss">RSS Feed</a></div>'
+    echo '<p><a href="index.rss">RSS Feed</a></p>'
      # |<a href="index.atom">Atom Feed</a></div>'
 
     # Markdown posts
