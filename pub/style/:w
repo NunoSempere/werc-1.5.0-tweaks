@@ -184,7 +184,7 @@ blockquote{
   border-left:8px solid #005386 ;
   line-height:1.3;
   position: relative;
-  background: #F0F0F0;
+  background:#EDEDED;
 }
 
 blockquote::before{
@@ -198,14 +198,4 @@ blockquote::before{
 }
 
 /* Code bloocks */
-pre, code {
-  display: block;
-  overflow-x: auto; 
-  tab-width: 2;
-  line-height:1.7;
-  padding: 0.5em 0.5em 0.5em 0.5em;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin: 2em;
-  background: #F0F0F0;
-}
+pre { white-space: pre-wrap; }
