@@ -25,6 +25,8 @@ server {
     #charset utf-8;
 
     #access_log  logs/host.access.log  main;
+    access_log /var/log/nginx/nunosempere.com.log;
+    # ^ delete line to make logs go back to normal
 
     location / {
 
