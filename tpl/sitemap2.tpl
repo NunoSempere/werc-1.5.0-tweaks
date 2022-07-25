@@ -4,6 +4,7 @@
 tmpfile=/tmp/werc_sitemap2_$pid.txt
 tmpfilex=/tmp/werc_sitemap2_$pid.txt
 saveddf=$dirfilter
+filtereddirs=( images )
 
 MON2NUM='s/Jan/01/; s/Feb/02/; s/Mar/03/; s/Apr/04/; s/May/05/; s/Jun/06/; s/Jul/07/; s/Aug/08/; s/Sep/09/; s/Oct/10/; s/Nov/11/; s/Dec/12/;'
 
@@ -31,6 +32,7 @@ fn listDir {
                 echo '<li><a href="'$url'">'^$"filename^'</a></li>' 
 	    }
             if not {
+                if(! ~ $"dirname $filtereddirs)
                 echo '<li><a href="'$url'">'^$"dirname^'</a></li>' 
 	    }
             echo $base_url^$url >> $tmpfile
