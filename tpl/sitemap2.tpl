@@ -1,8 +1,8 @@
 <h1>Site map</h1>
 
 %{
-tmpfile=/tmp/werc_sitemap_$pid.txt
-tmpfilex=/tmp/werc_sitemapx_$pid.txt
+tmpfile=/tmp/werc_sitemap2_$pid.txt
+tmpfilex=/tmp/werc_sitemap2_$pid.txt
 saveddf=$dirfilter
 
 MON2NUM='s/Jan/01/; s/Feb/02/; s/Mar/03/; s/Apr/04/; s/May/05/; s/Jun/06/; s/Jul/07/; s/Aug/08/; s/Sep/09/; s/Oct/10/; s/Nov/11/; s/Dec/12/;'
@@ -23,14 +23,18 @@ fn listDir {
         echo '<ul class="sitemap-list">'
 
         for(i in `{ls -dF $d^*/ $d^*.md $d^*.html $d^*.txt >[2]/dev/null | sed $dirfilter}) {
-            desc=`{get_file_title $i}
-            u=`{echo $i|sed 's!'$sitedir'!!; '$dirclean's!/index$!/!; '}
-            if(! ~ $#desc 0 && ! ~ $desc '')
-                desc=' - '$"desc
-            n=`{echo /$u|sed 's/[\-_]/ /g; s,.*/([^/]+)/?$,\1,'}
-            echo '<li><a href="'$u'">'^$"n^'</a>' $"desc '</li>' 
-            echo $base_url^$u >> $tmpfile
-            echo '<url><loc>'$base_url^$u'</loc><lastmod>'^`{get_mdate $i}^'</lastmod></url>' >> $tmpfilex
+            filename=`{get_file_title $i}
+            url=`{echo $i|sed 's!'$sitedir'!!; '$dirclean's!/index$!/!; '}
+            dirname=`{echo /$url|sed 's/[\-_]/ /g; s,.*/([^/]+)/?$,\1,'}
+            if(! ~ $#filename 0 && ! ~ $filename '') {
+                # filename=' — '$"filename
+                echo '<li><a href="'$url'">'^$"filename^'</a></li>' 
+	    }
+            if not {
+                echo '<li><a href="'$url'">'^$"dirname^'</a></li>' 
+	    }
+            echo $base_url^$url >> $tmpfile
+            echo '<url><loc>'$base_url^$url'</loc><lastmod>'^`{get_mdate $i}^'</lastmod></url>' >> $tmpfilex
             if(test -d $i)
                 @{ listDir $i }
         }

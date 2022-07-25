@@ -26,9 +26,11 @@ fn listDir {
             desc=`{get_file_title $i}
             u=`{echo $i|sed 's!'$sitedir'!!; '$dirclean's!/index$!/!; '}
             if(! ~ $#desc 0 && ! ~ $desc '')
-                desc=' - '$"desc
+	       timestamp=`{echo $i | sed 's|sites/nunosempere.com/blog/||;' | sed 's|\(\d\)/.*/|$1|'}
+	       echo $timestamp
+                // desc=' - '$"desc
+                echo '<a href="'$u'">' $"desc '</a>' 
             n=`{echo /$u|sed 's/[\-_]/ /g; s,.*/([^/]+)/?$,\1,'}
-            echo '<li><a href="'$u'">'^$"n^'</a>' $"desc '</li>' 
             echo $base_url^$u >> $tmpfile
             echo '<url><loc>'$base_url^$u'</loc><lastmod>'^`{get_mdate $i}^'</lastmod></url>' >> $tmpfilex
             if(test -d $i)
