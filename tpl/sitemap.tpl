@@ -15,6 +15,7 @@ fn get_mdate {
 }
 
 fn get_children {
+    d=$1
     children = `{ls -dF $d^*/ $d^*.md $d^*.html $d^*.txt >[2]/dev/null | sed $dirfilter}
     echo $children
 }
@@ -27,29 +28,51 @@ fn listDir {
         . $d/_werc/config
 
     if(~ $#perm_redir_to 0) {
-        echo '<ul class="sitemap-list">'
-        siblings=`{ls -dF $d^*/ $d^*.md $d^*.html $d^*.txt >[2]/dev/null | sed $dirfilter}
+        siblings=`{get_children $d}
 	numsiblings = $#siblings
+	if(! ~ $numsiblings 0 && ! ~ $numsiblings 1){
+            echo '<ul class="sitemap-list">'
+	}
         for(i in $siblings) {
+	    ownchildren= `{get_children $i}
+	    numownchildren=$#ownchildren
             filename=`{get_file_title $i}
             url=`{echo $i|sed 's!'$sitedir'!!; '$dirclean's!/index$!/!; '}
             dirname=`{echo /$url|sed 's/[\-_]/ /g; s,.*/([^/]+)/?$,\1,'}
+            
+	    ## Open list?
+	    if(! ~ $numsiblings 1){
+	      echo '<li>'
+	    }
+
             if(! ~ $#filename 0 && ! ~ $filename '') {
                 # filename=' — '$"filename
-                echo '<li><a href="'$url'">'^$"filename^'</a></li>'
-		echo $numsiblings
+                echo '<a href="'$url'">'^$"filename^'</a>'
 	    }
             if not {
                 if(! ~ $"dirname $filtereddirs)
-                echo '<li><a href="'$url'">'^$"dirname^'</a></li>' 
-		echo $numsiblings
+                echo '<a href="'$url'">'^$"dirname^'</a>' 
 	    }
+
+            ## echo $numsiblings' '$numownchildren
+	    ## ^ Useful for debugging purposes.
+	    
+	    ## Close list?
+	    if(! ~ $numownchildren 1){
+	      echo '</li>'
+	    }
+            if not {
+              echo '/'
+	    }
+
             echo $base_url^$url >> $tmpfile
             echo '<url><loc>'$base_url^$url'</loc><lastmod>'^`{get_mdate $i}^'</lastmod></url>' >> $tmpfilex
             if(test -d $i)
                 @{ listDir $i }
         }
-        echo '</ul>'
+	if(! ~ $numsiblings 0 && ! ~ $numsiblings 1){
+            echo '</ul>'
+	}
     }
 }
 
