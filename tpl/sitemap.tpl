@@ -14,26 +14,35 @@ fn get_mdate {
     echo $t(6)^'-'^$t(2)^'-'^$t(3)
 }
 
+fn get_children {
+    children = `{ls -dF $d^*/ $d^*.md $d^*.html $d^*.txt >[2]/dev/null | sed $dirfilter}
+    echo $children
+}
+
 fn listDir {
     d=$1
     dirfilter=$saveddf
+
     if(test -f $d/_werc/config)
         . $d/_werc/config
 
     if(~ $#perm_redir_to 0) {
         echo '<ul class="sitemap-list">'
-
-        for(i in `{ls -dF $d^*/ $d^*.md $d^*.html $d^*.txt >[2]/dev/null | sed $dirfilter}) {
+        siblings=`{ls -dF $d^*/ $d^*.md $d^*.html $d^*.txt >[2]/dev/null | sed $dirfilter}
+	numsiblings = $#siblings
+        for(i in $siblings) {
             filename=`{get_file_title $i}
             url=`{echo $i|sed 's!'$sitedir'!!; '$dirclean's!/index$!/!; '}
             dirname=`{echo /$url|sed 's/[\-_]/ /g; s,.*/([^/]+)/?$,\1,'}
             if(! ~ $#filename 0 && ! ~ $filename '') {
                 # filename=' — '$"filename
-                echo '<li><a href="'$url'">'^$"filename^'</a></li>' 
+                echo '<li><a href="'$url'">'^$"filename^'</a></li>'
+		echo $numsiblings
 	    }
             if not {
                 if(! ~ $"dirname $filtereddirs)
                 echo '<li><a href="'$url'">'^$"dirname^'</a></li>' 
+		echo $numsiblings
 	    }
             echo $base_url^$url >> $tmpfile
             echo '<url><loc>'$base_url^$url'</loc><lastmod>'^`{get_mdate $i}^'</lastmod></url>' >> $tmpfilex
