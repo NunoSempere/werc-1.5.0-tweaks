@@ -2,7 +2,7 @@
 
 %{
 tmpfile=/tmp/werc_sitemap_$pid.txt
-tmpfilex=/tmp/werc_sitemap_$pid.txt
+tmpfilex=/tmp/werc_sitemapx_$pid.txt
 saveddf=$dirfilter
 filtereddirs=( images )
 
