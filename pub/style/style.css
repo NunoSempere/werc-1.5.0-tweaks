@@ -210,3 +210,17 @@ pre, code {
   margin: 2em;
   background: #F0F0F0;
 }
+
+/* Lists */
+/* this aligns the sitemap */
+
+ul {
+  margin-left: 15px;
+}
+
+li{
+  list-style-position: outside;
+  /* list-style-type: '- ' /* ndash, a*/
+}
+
+
