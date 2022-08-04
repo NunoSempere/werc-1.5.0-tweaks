@@ -95,6 +95,7 @@ fn blagh_body {
     } | sed 's/h[2-9]/i/g' | sed 's/h1/h3/g' |  head -n 5
 		# XXX BUG! Markdown [references] break because multiple markdown documents are merged. Should format each blog post independently.
     # TODO: use fltr_cache directly, that can fix the previous bug plus provide a perf boost by caching title generation.
+    echo '<p><a href="../sitemap">More content</a></p>'
 }
 
 fn get_post_list {
