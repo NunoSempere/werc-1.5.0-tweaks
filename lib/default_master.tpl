@@ -9,7 +9,7 @@
 </header>
 
 % if(! ~ $#handlers_bar_left 0) {
-    <nav id="side-bar">
+    <nav id="side-bar" class="hidden-mobile">
 %   for(h in $handlers_bar_left) {
         <div>
 %       run_handler $$h
@@ -24,6 +24,6 @@
 % run_handlers $handlers_body_foot
 </article>
 
-<footer>
+<footer class="hidden-mobile">
 % cat `{ get_lib_file footer.inc }
 </footer>

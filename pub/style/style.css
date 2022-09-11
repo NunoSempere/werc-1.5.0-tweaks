@@ -29,17 +29,6 @@ body {
 
 }
 
-/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
-@media screen and (max-width: 600px) {
-  body {
-    font-size: 1em;
-  }
-  .hidden-mobile {
-    display: none;
-  }
-
-}
-
 /* header */
 header {
   flex-basis: 100%;
@@ -164,7 +153,7 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 300px;
+  width: 25%;
 }
 
 .img-medium-center {
@@ -223,4 +212,54 @@ li{
   /* list-style-type: '- ' /* ndash, a*/
 }
 
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 
+td,
+th {
+  border: 1px solid var(--border);
+  text-align: left;
+  padding: 0.5rem;
+}
+
+th {
+  background: var(--accent-bg);
+  font-weight: bold;
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 1400px) {
+  body {
+    display: block;
+    font-size: 1em;
+  }
+  .hidden-mobile {
+    display: none;
+  }
+  article{
+    flex-basis: 100%;
+    padding: 3px;
+  }
+  header h1 {
+    margin-left: 0;
+  }
+  .img-frontpage-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .hide-not-mobile {
+    display: none;
+  }
+}
