@@ -38,7 +38,8 @@ comments apps) make sure all files under sites/ are writable by the user your
 cgi will run as, usually www-data, for example by doing: chown -R :www-data
 sites/; chmod -R g+w sites/
 
-Werc currently assumes that your website runs http, rather than https. If you are running https, locate and change https mentions using
+Werc currently assumes that your website runs http, rather than https. 
+If you are running https, locate and change https mentions using
 grep http -R bin/
 
 If your Plan 9 binaries are located somewhere else than the standard /bin/ you
@@ -54,6 +55,9 @@ lib/ under sites/example.com/_werc/lib.
 
 The source tree for the werc website is included under sites/werc.cat-v.org as
 an example, feel free to use it as a template for your own site.
+
+If a vim user, you may want to use a syntax file for rc:
+https://github.com/weakish/rcshell.vim
 
 For more details see the documentation section of the website:
 http://werc.cat-v.org/docs/
