@@ -321,15 +321,15 @@ table {
 }
 
 table thead {
-     position: sticky;
-     top: 0;
+     /* position: sticky;
+     top: 0; */
 }
  table tbody tr:nth-child(even) {
      background: #E9F1F4;
 }
  table th {
      background: #005386;
-     color: white;
+     color: #fcfcfc;
      font-weight: bold;
 }
  table th, table td {
@@ -337,4 +337,10 @@ table thead {
      /* border: 3px solid #005386; */
 }
 
+/* Isso comments */
+/* You  can see the general comments style: <https://comments.nunosempere.com/css/isso.css> */
+
+.isso-textarea, #isso-postbox-author, #isso-postbox-email, #isso-postbox-website, .isso-post-action > input {
+    font-size: 20px;
+}
 
