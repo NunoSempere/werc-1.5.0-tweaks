@@ -58,6 +58,10 @@ fn blagh_init {
                     notify_errors=$status
             }
         }
+
+	if not if (~ $req_path $blagh_uri^*){
+	  echo 1
+	}
         
     }
 }
