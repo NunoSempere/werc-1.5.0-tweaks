@@ -22,7 +22,7 @@
 body {
   display: flex;
   flex-wrap: wrap;
-  font-family: serif;
+  font-family: serif; 
   /* font-family: 'Source Serif Pro', serif; */
   font-size: 1.5em;
   background-color: #fcfcfc;
@@ -191,6 +191,16 @@ blockquote::before{
 }
 
 /* Code bloocks */
+pre { 
+  background-color: #eeeeee; 
+  border: 2px solid; 
+  overflow-x: auto; 
+}
+pre, code { 
+  padding: 0.5em; 
+}
+
+/*
 pre, code {
   display: block;
   overflow-x:auto; 
@@ -202,7 +212,7 @@ pre, code {
   margin: 2em;
   max-width: 1100px !important;
   background: #F0F0F0;
-}
+}*/
 
 /* Lists */
 /* this aligns the sitemap */
