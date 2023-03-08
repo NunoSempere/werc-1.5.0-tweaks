@@ -2,4 +2,5 @@
 # requires discount markdown: <https://www.pell.portland.or.us/~orc/Code/discount/>
 # note: must restart the application when this is changed
 # flags can be seen at: <https://github.com/Orc/discount/blob/3520113e1fbf2e012ba24ceb1343c37acda4edf0/pgm_options.c#L45=>
-/usr/bin/markdown -f fencedcode -f ext -f footnote -f latex $1
+
+/usr/bin/markdown -f fencedcode -f ext -f footnote -f latex
