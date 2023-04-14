@@ -196,7 +196,9 @@ pre {
   border: 2px solid; 
   overflow-x: auto; 
 }
-pre, code { 
+pre, 
+code { 
+  display: block;
   padding: 0.5em; 
 }
 
@@ -353,3 +355,8 @@ table thead {
     font-size: 20px;
 }
 
+.isso-textarea {
+  height: 15em;
+  resize: vertical;
+
+}
