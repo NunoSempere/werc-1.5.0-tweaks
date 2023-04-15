@@ -357,6 +357,6 @@ table thead {
 
 .isso-textarea {
   height: 15em;
-  resize: vertical;
+  resize: vertical !important;
 
 }
