@@ -9,7 +9,7 @@ fn conf_enable_blog {
         conf_blog_editors=blog-editors
 
     if(~ $"conf_max_posts_per_page '')
-        conf_max_posts_per_page=16
+        conf_max_posts_per_page=32
 }
 
 fn blagh_init {
