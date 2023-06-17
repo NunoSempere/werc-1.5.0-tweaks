@@ -45,11 +45,12 @@ header h1 span {
   */
 }
 
-/* Navigation bar */
-header nav {
+header nav { /* Not used by me, but used by suckless.org */
   display: flex;
   justify-content: space-between;
 }
+
+/* Navigation bar */
 
 nav {
   display: flex;
@@ -89,8 +90,7 @@ nav li a {
   padding: 0.3em 2em 0.8ex 1em;
 }
 
-/* Other sections */
-
+/* article */
 article{
   flex-basis: 70%;
   max-width: 70%;
@@ -100,6 +100,7 @@ article{
   /* padding: 0.3em 0 0 0; */
 }
 
+/* footer */
 footer {
   /* display: block; */
   flex-grow: 1;
@@ -129,10 +130,15 @@ figcaption {
   font-size: 16px;
 }
 
+.img-frontpage-center,
+.img-medium-center,
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+img {
   width: 80%;
 }
 
@@ -192,6 +198,7 @@ li{
 }
 
 /* Tables */
+/* old style:
 table {
   border-collapse: collapse;
   margin-left: auto;
@@ -210,6 +217,91 @@ th {
 th {
   background: var(--accent-bg);
   font-weight: bold;
+}
+*/
+
+table {
+    border: 3px solid #005386;
+    border-collapse: collapse;
+    table-layout: fixed;
+    text-align: left;
+    width: 100%;
+}
+
+table thead {
+     /* position: sticky;
+     top: 0; */
+}
+
+table tbody tr:nth-child(even) {
+     background: #E9F1F4;
+}
+
+table th {
+     background: #005386;
+     color: #fcfcfc;
+     font-weight: bold;
+}
+ table th, table td {
+     padding: 1em 1em 1em 1em;
+     /* border: 3px solid #005386; */
+}
+
+/* Newsletter stuff */
+
+.subscribe-button {
+  background: #0055d4;
+  padding: 15px 30px;
+  border-radius: 3px;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffff;
+  display: inline-block;
+  min-width: 150px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.subscribe-input {
+  padding: 10px 15px;
+  border: 1px solid #888;
+  border-radius: 3px;
+  width: 33%;
+  box-shadow: 2px 2px 0 #f3f3f3;
+  border: 1px solid #ddd;
+  font-size: 20px;
+}
+
+input:focus {
+  border-color: #0055d4;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+/* Figcaptions for markdown
+ * Per <https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll> 
+ */
+
+img + em {
+  display: block; 
+  text-align: center; 
+  font-size: 1em;
+}
+
+/* Isso comments */
+/* You  can see the general comments style: <https://comments.nunosempere.com/css/isso.css> */
+
+.isso-textarea, #isso-postbox-author, #isso-postbox-email, #isso-postbox-website, .isso-post-action > input {
+    font-size: 20px;
+}
+
+.isso-textarea {
+  height: 15em;
+  resize: vertical !important;
+
 }
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
@@ -238,87 +330,4 @@ th {
   .hide-not-mobile {
     display: none;
   }
-}
-
-/* Newsletter stuff */
-
-.subscribe-button {
-  background: #0055d4;
-  padding: 15px 30px;
-  border-radius: 3px;
-  border: 0;
-  cursor: pointer;
-  text-decoration: none;
-  color: #ffff;
-  display: inline-block;
-  min-width: 150px;
-  font-size: 20px;
-  text-align: center;
-}
-
-.subscribe-input {
-  padding: 10px 15px;
-  border: 1px solid #888;
-  border-radius: 3px;
-  width: 33%;
-  box-shadow: 2px 2px 0 #f3f3f3;
-  border: 1px solid #ddd;
-  font-size: 20px;
-}
-input:focus {
-  border-color: #0055d4;
-}
-
-input:focus::placeholder {
-  color: transparent;
-}
-
-/* Figcaptions for markdown
- * Per <https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll> 
- */
-
-img + em {
-  display: block; 
-  text-align: center; 
-  font-size: 1em;
-}
-
-/* Table */
-
-table {
-    border: 3px solid #005386;
-    border-collapse: collapse;
-    table-layout: fixed;
-    text-align: left;
-    width: 100%;
-}
-
-table thead {
-     /* position: sticky;
-     top: 0; */
-}
- table tbody tr:nth-child(even) {
-     background: #E9F1F4;
-}
- table th {
-     background: #005386;
-     color: #fcfcfc;
-     font-weight: bold;
-}
- table th, table td {
-     padding: 1em 1em 1em 1em;
-     /* border: 3px solid #005386; */
-}
-
-/* Isso comments */
-/* You  can see the general comments style: <https://comments.nunosempere.com/css/isso.css> */
-
-.isso-textarea, #isso-postbox-author, #isso-postbox-email, #isso-postbox-website, .isso-post-action > input {
-    font-size: 20px;
-}
-
-.isso-textarea {
-  height: 15em;
-  resize: vertical !important;
-
 }
