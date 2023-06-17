@@ -21,7 +21,7 @@
 
 body {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; 
   font-family: serif; 
   /* font-family: 'Source Serif Pro', serif; */
   font-size: 1.5em;
@@ -90,6 +90,13 @@ nav a:hover {
   background-color: #ddd;
 }
 
+nav {
+  display: flex;
+  flex-basis: 20%;
+  max-width: 20%;
+  min-width: 20%;
+}
+
 nav ul {
   display: flex;
   flex-direction: column;
@@ -113,6 +120,8 @@ nav li a {
 article{
   padding: 0.3em 0 0 0;
   flex-basis: 70%;
+  max-width: 70%;
+  min-width: 70%;
   padding-left: 1em;
   color: #333;
 }
@@ -259,6 +268,8 @@ th {
   }
   article {
     flex-basis: 100%;
+    max-width: 100%;
+    min-width: 100%;
     padding: 5px;
   }
   header h1 {
