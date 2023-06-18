@@ -1,0 +1,333 @@
+/* Font */
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://nunosempere.com/.resources/source-serif-pro-latin-ext.woff2) format('woff2'),
+       url(https://nunosempere.com/.resources/source-serif-pro-latin.woff2) format('woff2');
+  unicode-range: U+0000-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Body */
+
+body {
+  display: flex;
+  flex-wrap: wrap; 
+  font-family: serif; 
+  font-size: 1.5em;
+  background-color: #fcfcfc;
+  color:#333;
+}
+
+/* header */
+header {
+  flex-basis: 100%;
+  border-bottom: 2px solid #eee;
+}
+
+header h1 {
+  margin-left: 0.7em;
+  color:#333;
+}
+
+header a {
+  text-decoration: none;
+  color: #333;
+}
+
+header h1 span {
+  margin-left: 0em;
+  color: #555;
+  /*
+  font-size: 70%;
+  font-style: italic;
+  */
+}
+
+header nav { /* Not used by me, but used by suckless.org */
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Navigation bar */
+
+nav {
+  display: flex;
+  flex-basis: 20%;
+  max-width: 20%;
+  min-width: 20%;
+  float: left;
+  margin: 0 1px 0 0;
+  border-right: 2px solid #eee;
+  /* width: 350px; */
+}
+
+nav a{
+  text-decoration: none; 
+  color: #005386;
+}
+
+nav a:hover {
+  background-color: #ddd;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  list-style-position: outside;
+  padding-left: 0;
+}
+
+nav li ul {
+  padding-left: 0.6em;
+}
+
+nav li a {
+  display: block;
+  margin: 0;
+  padding: 0.3em 2em 0.8ex 1em;
+}
+
+/* article */
+article{
+  flex-basis: 70%;
+  max-width: 70%;
+  min-width: 70%;
+  padding-left: 1em;
+  color: #333;
+  /* padding: 0.3em 0 0 0; */
+}
+
+/* footer */
+footer {
+  /* display: block; */
+  flex-grow: 1;
+  flex-basis: 100%;
+  flex-shrink: 0;
+  justify-content: space-between;
+  padding: 0.1em 0em 1em 1em;
+  border-top: 2px solid #eee
+}
+
+/* links */
+
+a {
+  color: #005386;
+}
+
+/* Images and figures */
+
+figure figcaption {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figcaption {
+  text-align: center;
+  font-size: 16px;
+}
+
+.img-frontpage-center,
+.img-medium-center,
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  width: 80%;
+}
+
+.img-frontpage-center {
+  width: 40%;
+}
+
+.img-medium-center {
+  width: 50%;
+}
+
+/* Block quotes */
+
+blockquote{
+  width:60%;
+  margin: 5px auto;
+  color: #555555;
+  padding: 1.2em 30px 1.2em 75px;
+  border-left:8px solid #005386 ;
+  line-height:1.3;
+  position: relative;
+  background: #F0F0F0;
+}
+
+blockquote::before{
+  font-family:Arial;
+  content: "\201C";
+  color:#005386;
+  font-size:4em;
+  position: absolute;
+  left: 10px;
+  top:-10px;
+}
+
+/* Code bloocks */
+pre { 
+  background-color: #eeeeee; 
+  border: 2px solid; 
+  overflow-x: auto; 
+}
+pre, 
+code { 
+  display: block;
+  padding: 0.5em; 
+}
+
+/* Lists */
+/* this aligns the sitemap */
+
+ul {
+  margin-left: 15px;
+}
+
+li{
+  list-style-position: outside;
+  /* list-style-type: '- ' /* ndash, a*/
+}
+
+/* Tables */
+/* old style:
+table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+td,
+th {
+  border: 1px solid var(--border);
+  text-align: left;
+  padding: 0.5rem;
+}
+
+th {
+  background: var(--accent-bg);
+  font-weight: bold;
+}
+*/
+
+table {
+    border: 3px solid #005386;
+    border-collapse: collapse;
+    table-layout: fixed;
+    text-align: left;
+    width: 100%;
+}
+
+table thead {
+     /* position: sticky;
+     top: 0; */
+}
+
+table tbody tr:nth-child(even) {
+     background: #E9F1F4;
+}
+
+table th {
+     background: #005386;
+     color: #fcfcfc;
+     font-weight: bold;
+}
+ table th, table td {
+     padding: 1em 1em 1em 1em;
+     /* border: 3px solid #005386; */
+}
+
+/* Newsletter stuff */
+
+.subscribe-button {
+  background: #0055d4;
+  padding: 15px 30px;
+  border-radius: 3px;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffff;
+  display: inline-block;
+  min-width: 150px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.subscribe-input {
+  padding: 10px 15px;
+  border: 1px solid #888;
+  border-radius: 3px;
+  width: 33%;
+  box-shadow: 2px 2px 0 #f3f3f3;
+  border: 1px solid #ddd;
+  font-size: 20px;
+}
+
+input:focus {
+  border-color: #0055d4;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+/* Figcaptions for markdown
+ * Per <https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll> 
+ */
+
+img + em {
+  display: block; 
+  text-align: center; 
+  font-size: 1em;
+}
+
+/* Isso comments */
+/* You  can see the general comments style: <https://comments.nunosempere.com/css/isso.css> */
+
+.isso-textarea, #isso-postbox-author, #isso-postbox-email, #isso-postbox-website, .isso-post-action > input {
+    font-size: 20px;
+}
+
+.isso-textarea {
+  height: 15em;
+  resize: vertical !important;
+
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 1400px) {
+  body {
+    display: block;
+  }
+  .hidden-mobile {
+    display: none;
+  }
+  article {
+    flex-basis: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 5px;
+  }
+  header h1 {
+    margin-left: 0;
+  }
+  .img-frontpage-center {
+    width: 28%; /* 40% * 70%, so that the relative size stays the same*/
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .hide-not-mobile {
+    display: none;
+  }
+}
