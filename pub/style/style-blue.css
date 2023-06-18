@@ -20,6 +20,10 @@ body {
   color:#333;
 }
 
+* { /* incorporates the padding and borders into the object size*/
+  box-sizing: border-box;
+}
+
 /* header */
 header {
   flex-basis: 100%;

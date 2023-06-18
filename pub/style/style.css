@@ -20,6 +20,10 @@ body {
   color:#333;
 }
 
+* { /* incorporates the padding and borders into the object size*/
+  box-sizing: border-box;
+}
+
 /* header */
 header {
   flex-basis: 100%;
@@ -103,13 +107,16 @@ article{
 
 /* footer */
 footer {
+  display: none;
   /* display: block; */
+  /* 
   flex-grow: 1;
   flex-basis: 100%;
   flex-shrink: 0;
   justify-content: space-between;
   padding: 0.1em 0em 1em 1em;
   border-top: 2px solid #eee
+  */
 }
 
 /* links */
