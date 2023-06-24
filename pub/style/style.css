@@ -321,7 +321,26 @@ img + em {
 }
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
-@media screen and (max-width: 1400px) {
+
+@media screen and (max-width: 700px) {
+  .img-frontpage-center {
+    width: 60%; /* 700px * 0.6 = 420px */ 
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1500px) {
+  .img-frontpage-center {
+    width: 420px
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .img-frontpage-center {
+    width: 40%; /* 1500px * 0.7 (article) * 0.4 = 420px */
+  }
+}
+
+@media screen and (max-width: 1500px) {
   body {
     display: block;
   }
@@ -337,12 +356,9 @@ img + em {
   header h1 {
     margin-left: 0;
   }
-  .img-frontpage-center {
-    width: 28%; /* 40% * 70%, so that the relative size stays the same*/
-  }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1500px) {
   .hide-not-mobile {
     display: none;
   }
