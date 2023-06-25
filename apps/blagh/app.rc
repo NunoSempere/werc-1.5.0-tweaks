@@ -80,7 +80,10 @@ fn blagh_body {
 
     # Direct links to feeds are disabled because they are not very useful, add clutter and might waste pagerank.
     # An user can add this on their own using handlers_body_head anyway.
-    echo '<p><a href="index.rss">RSS Feed</a>, <a href="../.subscribe">subscribe per email</a>, <a href="../sitemap">all content</a></p>'
+    if (! ~ $base_url 'https://gartzea.com')
+    	echo '<p><a href="index.rss">RSS Feed</a>, <a href="../.newsletter">subscribe per email</a>, <a href="../sitemap">all content</a></p>'
+    else 
+      echo '<p><a href="index.rss">RSS</a>, <a href="../gaceta">gaceta</a>, <a href="../sitemap">todo</a></p>'
      # |<a href="index.atom">Atom Feed</a></div>'
 
     # Markdown posts
