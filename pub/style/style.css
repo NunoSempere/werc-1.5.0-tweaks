@@ -1,22 +1,61 @@
-/* Font */
+/* Fonts */
+
+/*
+@font-face {
+  font-family: charter;
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  src: url('/pub/fonts/charter/charter_regular.woff2') format('woff2');
+}
+
 @font-face {
   font-family: 'Source Serif Pro';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://nunosempere.com/.resources/source-serif-pro-latin-ext.woff2) format('woff2'),
-       url(https://nunosempere.com/.resources/source-serif-pro-latin.woff2) format('woff2');
+  src: url(https://nunosempere.com/pub/fonts/source-serif/source-serif-pro-latin-ext.woff2) format('woff2'),
+       url(https://nunosempere.com/pub/fonts/source-serif/source-serif-pro-latin.woff2) format('woff2');
   unicode-range: U+0000-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
+
+@font-face {
+  font-family: charter;
+  font-style: italic;
+  font-weight: normal;
+  font-stretch: normal;
+  src: url('/pub/fonts/charter/charter_italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: charter;
+  font-style: normal;
+  font-weight: bold;
+  font-stretch: normal;
+  src: url('/pub/fonts/charter/charter_bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: charter;
+  font-style: italic;
+  font-weight: bold;
+  font-stretch: normal;
+  src: url('/pub/fonts/charter/charter_bold_italic.woff2') format('woff2');
+}
+*/
 /* Body */
 
 body {
   display: flex;
   flex-wrap: wrap; 
-  font-family: serif; 
-  font-size: 1.5em;
+  /* font-family: 'Source Serif Pro'; */
+  /* font-family: 'Times New Roman'; */
+  font-family: 'serif';
+  /* font-family: 'charter'; */
+  font-size: 25px;
   background-color: #fcfcfc;
+  line-height: 130%;
   color:#333;
 }
 
@@ -31,7 +70,7 @@ header {
 }
 
 header h1 {
-  margin-left: 0.7em;
+  margin: 0.7em 0 1.2em 0.7em;
   color:#333;
 }
 
@@ -320,8 +359,7 @@ img + em {
 
 }
 
-/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
-
+/* Set image-frontpage-center size across devices */
 @media screen and (max-width: 700px) {
   .img-frontpage-center {
     width: 60%; /* 700px * 0.6 = 420px */ 
@@ -340,6 +378,8 @@ img + em {
   }
 }
 
+
+/* General media stuff */
 @media screen and (max-width: 1500px) {
   body {
     display: block;
