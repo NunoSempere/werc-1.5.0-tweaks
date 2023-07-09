@@ -360,13 +360,17 @@ img + em {
 }
 
 /* Set image-frontpage-center size across devices */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1000px) {
+  body {
+    display: block;
+    font-size: 40px;
+  }
   .img-frontpage-center {
     width: 60%; /* 700px * 0.6 = 420px */ 
   }
 }
 
-@media screen and (min-width: 700px) and (max-width: 1500px) {
+@media screen and (min-width: 1000px) and (max-width: 1500px) {
   .img-frontpage-center {
     width: 420px
   }
@@ -378,12 +382,10 @@ img + em {
   }
 }
 
-
 /* General media stuff */
 @media screen and (max-width: 1500px) {
   body {
     display: block;
-    font-size: 40px;
   }
   .hidden-mobile {
     display: none;
