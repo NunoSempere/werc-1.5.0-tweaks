@@ -70,7 +70,7 @@ header {
 }
 
 header h1 {
-  margin: 1em 0 1em 0.7em;
+  margin: 0.5em 0 0.5em 0.7em;
   color:#333;
 }
 
@@ -91,6 +91,12 @@ header h1 span {
 header nav { /* Not used by me, but used by suckless.org */
   display: flex;
   justify-content: space-between;
+}
+
+/* Header */
+
+h1 {
+  line-height: 110%;
 }
 
 /* Navigation bar */
