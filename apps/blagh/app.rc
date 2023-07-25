@@ -81,7 +81,8 @@ fn blagh_body {
     # Direct links to feeds are disabled because they are not very useful, add clutter and might waste pagerank.
     # An user can add this on their own using handlers_body_head anyway.
     if (! ~ $base_url 'https://gartzea.com')
-    	echo '<p><a href="index.rss">RSS Feed</a>, <a href="../.newsletter">subscribe per email</a>, <a href="../sitemap">all content</a></p>'
+    	# echo '<p style="font-size: 25px;"><a href="index.rss">RSS Feed</a>, <a href="../.newsletter">subscribe per email</a>, <a href="../sitemap">all content</a></p>'
+    	echo '<p style="font-size: 25px;"><a href="index.rss">RSS Feed</a>, <a href="../sitemap">all content</a></p>'
     if (~ $base_url 'https://gartzea.com')
     	echo '<p><a href="index.rss">RSS</a>, <a href="../gaceta">gaceta</a>, <a href="../sitemap">todo</a></p>'
     # echo "$base_url"
@@ -93,7 +94,7 @@ fn blagh_body {
         l=`{echo -n $p|sed 's!'$sitedir^'/?(.*)([0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9])(/[^/]+/)!\2 /\1\2\3!'}
         sed '1s!.*![&]('^$l(2)^') ('^$l(1)^')!' < $p/index.md | head -n 10
 	echo 
-	echo '<p style="text-align: left; margin-right: 10%; font-size: 28px;"><a style="text-decoration: none;" href="'^$l(2)^'"><b>&rarr; &#42604;</b> ...</a></p>'
+	echo '<p style="text-align: left; margin-right: 10%; font-size: 28px;"><a style="text-decoration: none;" href="'^$l(2)^'"><b>&rarr;</b> &#42604; ...</a></p>'
 	# &rArr;
 	# &#x27A1;
 	# https://www.smashingmagazine.com/2009/07/designing-read-more-and-continue-reading-links/
