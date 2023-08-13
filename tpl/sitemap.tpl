@@ -31,7 +31,7 @@ fn listDir {
         siblings=`{get_children $d}
 	numsiblings = $#siblings
 	if(! ~ $numsiblings 0 && ! ~ $numsiblings 1){
-            echo '<ul class="sitemap-list">'
+            echo '<ul class="sitemap-list" style="list-style-type: none; list-style-position: outside;" >'
 	}
         for(i in $siblings) {
 	    ownchildren= `{get_children $i}
@@ -42,7 +42,7 @@ fn listDir {
             
 	    ## Open list?
 	    if(! ~ $numsiblings 1){
-	      echo '<li>'
+	      echo '<li style="list-style-type: none; list-style-position: outside; ">'
 	    }
 
             if(! ~ $#filename 0 && ! ~ $filename '') {
@@ -51,7 +51,7 @@ fn listDir {
 	    }
             if not {
                 if(! ~ $"dirname $filtereddirs)
-                echo '<a href="'$url'">'^$"dirname^'</a>' 
+                echo '<a href="'$url'" style="text-decoration: none;"  >'^$"dirname^'</a>' 
 	    }
 
             ## echo $numsiblings' '$numownchildren
@@ -62,7 +62,8 @@ fn listDir {
 	      echo '</li>'
 	    }
             if not {
-              echo '/'
+              #  echo '/'
+              echo '&nbsp;'
 	    }
 
             echo $base_url^$url >> $tmpfile
