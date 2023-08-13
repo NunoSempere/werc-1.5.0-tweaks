@@ -55,7 +55,6 @@ body {
   /* font-family: 'charter'; */
   font-size: 25px;
   background-color: #fcfcfc;
-  line-height: 130%;
   color:#333;
 }
 
@@ -147,6 +146,7 @@ article{
   min-width: 70%;
   padding-left: 1em;
   color: #333;
+  line-height: 140%;
   /* padding: 0.3em 0 0 0; */
 }
 
@@ -369,7 +369,8 @@ img + em {
 @media screen and (max-width: 1000px) {
   body {
     display: block;
-    font-size: 40px;
+    font-size: 25px;
+  line-height: 140%;
   }
   .img-frontpage-center {
     width: 60%; /* 700px * 0.6 = 420px */ 

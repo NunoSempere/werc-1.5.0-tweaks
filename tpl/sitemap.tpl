@@ -47,7 +47,7 @@ fn listDir {
 
             if(! ~ $#filename 0 && ! ~ $filename '') {
                 # filename=' — '$"filename
-                echo '<a href="'$url'">'^$"filename^'</a>'
+                echo '<a href="'$url'"  >'^$"filename^'</a>'
 	    }
             if not {
                 if(! ~ $"dirname $filtereddirs)
@@ -62,8 +62,8 @@ fn listDir {
 	      echo '</li>'
 	    }
             if not {
-              #  echo '/'
-              echo '&nbsp;'
+              echo '/'
+              # echo '&nbsp;'
 	    }
 
             echo $base_url^$url >> $tmpfile
