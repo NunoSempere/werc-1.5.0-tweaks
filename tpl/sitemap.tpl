@@ -62,8 +62,8 @@ fn listDir {
 	      echo '</li>'
 	    }
             if not {
-              echo '/'
-              # echo '&nbsp;'
+              echo '·'
+              # &nbsp; / | &mdash;
 	    }
 
             echo $base_url^$url >> $tmpfile
