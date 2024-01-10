@@ -1,6 +1,6 @@
 /* Fonts */
 
-/*
+/* Removed because it added significant time to first initial load. Code can still be found in git commit [...]
 @font-face {
   font-family: charter;
   font-style: normal;
