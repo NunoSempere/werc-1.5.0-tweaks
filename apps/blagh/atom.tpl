@@ -8,7 +8,7 @@ fn statpost {
     post_uri=$base_url^`{cleanname `{echo $f | sed -e 's!^'$sitedir'!!'}}^'/'
     title=`{read $f/index.md}
     by=`{ls -m $f | sed 's/^\[//g; s/].*$//g' >[2]/dev/null}
-    ifs=() { summary=`{cat $f/index.md | strip_title_from_md_file | ifs=$difs {$formatter} } }
+    ifs=() { summary=`{cat $f/index.md | head -n 10 | strip_title_from_md_file  | ifs=$difs {$formatter} } }
 }
 # rfc3339 date when feed was last updated.
 fupdated = `{ndate -a `{date `{mtime `{ls $blagh_root$blagh_dirs/[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9]/[0-9] | tail -1} | awk '{print $1}'}}}

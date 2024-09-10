@@ -10,7 +10,7 @@ fn statpost {
     by=`{ls -m $f | sed 's/^\[//g; s/].*$//g' >[2]/dev/null}
     extracted_on=`{echo $relative_uri | sed 's|/blog/||g' | head -c 10 }
     published_on=`{ /bin/date -R -D '%Y/%m/%d' -d $extracted_on }
-    ifs=() {summary=`{ cat $f/index.md | strip_title_from_md_file | ifs=$difs {$formatter | escape_html} }}
+    ifs=() {summary=`{ cat $f/index.md | head -n 10 | strip_title_from_md_file | ifs=$difs {$formatter | escape_html} }}
     # % could also add a | head -n 10 to only show the first few lines.
 }
 
