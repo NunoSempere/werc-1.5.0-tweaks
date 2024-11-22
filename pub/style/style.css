@@ -10,6 +10,7 @@ body {
   font-family: "Computer Modern Serif", serif;
 }
 */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 
 /* Body */
 
@@ -26,8 +27,10 @@ body {
   font-family: 'Source Serif Pro';
   font-family: "Computer Modern Serif", serif;
   font-family: 'charter'; 
-  */
   font-family: "Georgia", 'serif';
+  font-family: "Georgia", 'serif';
+  */
+  font-family: "Roboto Mono", 'monospace';
   font-size: 25px;
   background-color: #fcfcfc;
   color: #333;
